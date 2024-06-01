@@ -29,5 +29,3 @@ const formatThousand = (number) => {
 
   return parseInt(finalString);
 };
-
-formatThousand(10000000000);
