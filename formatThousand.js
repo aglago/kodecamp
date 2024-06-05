@@ -16,5 +16,3 @@ function formatThousand(number) {
     
     return formattedNumber;
 }
-
-console.log(formatThousand(1000))
