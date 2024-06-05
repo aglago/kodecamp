@@ -4,28 +4,17 @@
  * return: formatted number with commas as thousands separators
  */
 
-const formatThousand = (number) => {
-  let numString = number.toString();
-  let len = numString.length;
-  let numArray = [];
+function formatThousand(number) {
+    // Convert number to string
+    let numStr = number.toString();
+    
+    // Regex to match groups of three digits
+    let regex = /\B(?=(\d{3})+(?!\d))/g;
+    
+    // Add commas for thousands separators
+    let formattedNumber = numStr.replace(regex, ",");
+    
+    return formattedNumber;
+}
 
-  for (let i = 0; i < len; i++) {
-    numArray[i] = numString[i];
-  }
-
-  const mod = len % 3;
-  let index = mod === 0 ? 3 : mod;
-
-  while (index < len) {
-    numArray.splice(index, 0, ",");
-    index += 4;
-    len++;
-  }
-
-  let finalString = "";
-  for (let i = 0; i < len; i++) {
-    finalString = finalString.concat(numArray[i]);
-  }
-
-  return parseInt(finalString);
-};
+console.log(formatThousand(1000))
