@@ -29,5 +29,3 @@ const formatThousand = (number) => {
 
   return finalString;
 };
-
-console.log(formatThousand(1000000000))
