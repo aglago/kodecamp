@@ -15,5 +15,5 @@ const formatName = (name) => {
     let finalName = ''
     for (let i = 0; i < capitalized.length; i++)
         finalName = finalName.concat(' ', capitalized[i]);
-    console.log(finalName.trim())
+    return finalName.trim()
 }
