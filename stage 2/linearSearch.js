@@ -12,3 +12,7 @@ function linearSearch(array, string) {
     }
     return "No, the string does not exist in the array";
 }
+
+// example use of function
+
+console.log(linearSearch(['esi', 'adwoa', 'abena', 'ekua', 'yaa', 'afua', 'ama'], 'ama'))
