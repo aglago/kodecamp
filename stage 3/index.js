@@ -42,11 +42,14 @@ app.get("/tasks/:id", (req, res) => {
 // A put endpoint to change the title and body of a task
 app.put("/tasks/:id", (req, res) => {
   const taskId = req.params.id;
-  const task = tasks.find((task) => task.id == taskId);
-  const { newTitle, newBody } = req.body;
+  const newTaskDetails = req.body;
 
-  task.title = newTitle;
-  task.body = newBody;
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i].id == taskId) {
+      tasks[i].title = newTaskDetails.title;
+      tasks[i].body = newTaskDetails.body;
+    }
+  }
 
   res.send("Task updated successfully");
 });
@@ -54,10 +57,15 @@ app.put("/tasks/:id", (req, res) => {
 // A patch endpoint to change the status of a task
 app.patch("/tasks/:id", (req, res) => {
   const taskId = req.params.id;
-  const task = tasks.find((task) => task.id == taskId);
-  const { newStatus } = req.body;
+  const newTaskDetails = req.body;
 
-  task.status = newStatus;
+  for (let i = 0; i < tasks.length; i++)
+  {
+    if (tasks[i].id == taskId) {
+      tasks[i].status = newTaskDetails.status;
+    }
+  }
+
   res.send("Task patched successfully");
 });
 
