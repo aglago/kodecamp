@@ -1,0 +1,3 @@
+#!/bin/bash
+
+http PATCH http://localhost:8000/tasks/8f3e1cda-9eba-4b22-9acb-48f78535fd06 Content-Type:application/json status=updated\ status

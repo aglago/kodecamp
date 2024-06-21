@@ -58,13 +58,15 @@ app.patch("/tasks/:id", (req, res) => {
   const { newStatus } = req.body;
 
   task.status = newStatus;
+  res.send("Task patched successfully");
 });
 
 // A delete endpoint to remove a task from the array of tasks.
-app.patch("/tasks/:id", (req, res) => {
+app.delete("/tasks/:id", (req, res) => {
   const taskId = req.params.id;
 
   tasks = tasks.filter((task) => task.id !== taskId);
+  res.send("Task deleted successfully");
 });
 
 // server to listen for request
