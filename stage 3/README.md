@@ -1,4 +1,4 @@
-# Stage 3 - Task Management API
+# Stage 3 / TASK 3: CRUD for a task-tracking app.
 
 Welcome to Stage 3 of Kodecamp 4.0! This folder contains the backend implementation and API tests for the Task Management API.
 
