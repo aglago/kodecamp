@@ -1,3 +1,0 @@
-#!/bin/bash
-
-http DELETE http://localhost:8000/tasks/69bf34c5-5354-45ea-93e2-4661a534786e

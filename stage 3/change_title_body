@@ -1,3 +1,0 @@
-#!/bin/bash
-
-http PUT http://localhost:8000/tasks/4ae884bf-133c-44e6-b8ce-87d1b4a7a9b1 Content-Type:application/json title=updated\ task\ title body=updated\ task\ body
