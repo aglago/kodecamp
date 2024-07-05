@@ -1,0 +1,21 @@
+{
+  "name": "stage-4",
+  "version": "1.0.0",
+  "description": "This API provides endpoints for user registration, login, forgot password, reset password, and accessing protected user profile details.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.4",
+    "nodemailer": "^6.9.14"
+  }
+}
