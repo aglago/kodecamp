@@ -13,8 +13,12 @@ Content-Type: application/json
 
 {
     "email": "samuellamanyeaglago@gmail.com",
-    "password": "123456"
+    "password": "sammyAglago97"
 }
+
+###
+GET http://localhost:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODg3NTg5MGY0YjgyMDJmODUxNjk0NCIsImVtYWlsIjoic2FtdWVsbGFtYW55ZWFnbGFnb0BnbWFpbC5jb20iLCJpYXQiOjE3MjAyMTkwNjl9.kLLdWzwxl042QLx0moUOE18oie6GXP9UDJugN8w9GVw
 
 ###
 POST http://localhost:3000/auth/forgot_password
@@ -29,6 +33,6 @@ POST http://localhost:3000/auth/reset_password
 Content-Type: application/json
 
 {
-    "token": "cbcda01f-853b-43db-8154-3e64124d85a4",
+    "token": "0ce198ec-13be-4a11-9356-ca4deb2310c0",
     "newPassword": "sammyAglago97"
 }

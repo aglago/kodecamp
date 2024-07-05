@@ -1,7 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.routes.js";
-import connectToDatabase from "./db/connectToDatabase.js";
+import profileRoutes from "./routes/profile.routes.js";
+import connectToDatabase from "./connectToDatabase.js";
 
 dotenv.config();
 
@@ -11,6 +12,7 @@ const app = express();
 app.use(express.json());
 
 app.use("/auth", authRoutes);
+app.use("/profile", profileRoutes);
 
 // Use json format
 app.use(express.json());
