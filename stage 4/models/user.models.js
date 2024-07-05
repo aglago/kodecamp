@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { type } from "os";
 
 const userSchema = new mongoose.Schema({
     fullName: {
@@ -14,14 +13,6 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    },
-    authToken: {
-        type: String,
-        default: ""
-    },
-    authPurpose: {
-        type: String,
-        default: ""
     }
 }, { timestamps: true })
 

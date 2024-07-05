@@ -17,3 +17,9 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:3000/auth/forgot_password
+Content-Type: application/json
+
+{
+    "email": "samuellamanyeaglago@gmail.com"
+}
