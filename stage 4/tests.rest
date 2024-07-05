@@ -23,3 +23,12 @@ Content-Type: application/json
 {
     "email": "samuellamanyeaglago@gmail.com"
 }
+
+###
+POST http://localhost:3000/auth/reset_password
+Content-Type: application/json
+
+{
+    "token": "cbcda01f-853b-43db-8154-3e64124d85a4",
+    "newPassword": "sammyAglago97"
+}
