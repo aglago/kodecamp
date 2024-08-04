@@ -58,7 +58,7 @@ export const editProduct = async (req, res) => {
     );
     if (!product) return res.status(404).send({ message: "Product not found" });
 
-    res.send({ message: "Product edited successfully", product});
+    res.send({ message: "Product edited successfully", product });
   } catch (error) {
     console.log("Error in the editProduct controller: " + error.message);
     res.status(500).send({ message: "Failed to add product" });
@@ -73,7 +73,7 @@ export const deleteProduct = async (req, res) => {
     const product = await Product.findById(id);
     if (!product) return res.status(404).send({ message: "Product not found" });
 
-    if (product.userId !== req.user._id)
+    if (product.userId.toString() !== req.user.id)
       return res.status(403).send({
         message: "Forbidden: You are not authorized to delete this product",
       });

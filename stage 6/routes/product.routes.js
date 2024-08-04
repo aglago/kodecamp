@@ -17,6 +17,6 @@ router.use(verifyRole("admin"));
 
 router.post("/", addProduct);
 router.post("/:id/edit", editProduct);
-router.post("/:id/delete", deleteProduct);
+router.delete("/:id", deleteProduct);
 
 export default router;
