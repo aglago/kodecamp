@@ -1,4 +1,5 @@
 import Order from "../models/order.models.js";
+import mongoose from "mongoose";
 
 export const addOrder = async (req, res) => {
   try {
@@ -24,7 +25,7 @@ export const addOrder = async (req, res) => {
 
     // creating order
     const order = await Order.create({
-      userId: req.user._id,
+      userId: req.user.id,
       products: orderItems,
       totalPrice,
     });

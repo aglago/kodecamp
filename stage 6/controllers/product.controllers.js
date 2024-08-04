@@ -79,7 +79,7 @@ export const deleteProduct = async (req, res) => {
       });
 
     await Product.findByIdAndDelete(id);
-    res.send("Product deleted successfully");
+    res.send({ message: "Product deleted successfully" });
   } catch (error) {
     console.log("Error in the deleteProduct controller: " + error.message);
     res.status(500).send({ message: "Failed to add product" });
