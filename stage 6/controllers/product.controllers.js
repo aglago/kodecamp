@@ -23,7 +23,6 @@ export const getProducts = async (req, res) => {
 };
 
 export const addProduct = async (req, res) => {
-  console.log("I am here");
   try {
     const { name, description, price, quantity } = req.body;
 
@@ -31,19 +30,16 @@ export const addProduct = async (req, res) => {
       return res.status(400).send({ message: "All fields are required" });
     }
 
-    console.log("I am here");
-
     const product = new Product({
       name,
       description,
       price,
       quantity,
+      userId: req.user.id,
     });
-    console.log("I am here");
     await product.save();
-    console.log("I am here");
 
-    res.send("Product saved successfully");
+    res.send({ message: "Product saved successfully", product });
   } catch (error) {
     console.log("Error in the addProduct controller: " + error.message);
     res.status(500).send({ message: "Failed to add product" });
@@ -62,7 +58,7 @@ export const editProduct = async (req, res) => {
     );
     if (!product) return res.status(404).send({ message: "Product not found" });
 
-    res.send("Product edited successfully");
+    res.send({ message: "Product edited successfully", product});
   } catch (error) {
     console.log("Error in the editProduct controller: " + error.message);
     res.status(500).send({ message: "Failed to add product" });

@@ -61,7 +61,7 @@ Content-Type: application/json
 # samuella token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2MjNkYjA2NTg4YmRjOWY4YjJkYiIsImVtYWlsIjoic2FtdWVsbGFtYW55ZWFnbGFnb0BnbWFpbC5jb20iLCJpYXQiOjE3MjI3NzAxNzl9.Wy3TIuE24JIO4iLchoBEuOQxk-CrL8RPS0cD7_bTWjg
 # kennedy token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2Mjc1MzkwYzZiN2RkMWMwZGVjMCIsImVtYWlsIjoia2Vubnlhbmk5QGdtYWlsLmNvbSIsImlhdCI6MTcyMjc3MDI4N30.S1KMMfUCKm_PTZYoyG5VbkvNkHcRSPnZfgceXd9_QXg
 
-### Add products Ken
+### Add products Samuella
 
 POST http://localhost:8000/products/
 Content-Type: application/json
@@ -69,6 +69,31 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2MjNkY
 
 {
     "name": "Product 1",
+    "description": "This is product 1",
+    "price": 1000,
+    "quantity": 10
+}
+
+### Editing a product
+
+POST http://localhost:8000/products/66af72703ea15e6d0a26f8ec/edit
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2MjNkYjA2NTg4YmRjOWY4YjJkYiIsImVtYWlsIjoic2FtdWVsbGFtYW55ZWFnbGFnb0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjI3NzIxNTR9.s-xl770NiZVbpo1HvuRBJ9n0wpJwhcmse6r2w1zXeUU
+
+{
+    "name": "Product 1 edited",
+    "description": "This is product 1 edited",
+    "price": 5000
+}
+
+### Add products Ken
+
+POST http://localhost:8000/products/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2Mjc1MzkwYzZiN2RkMWMwZGVjMCIsImVtYWlsIjoia2Vubnlhbmk5QGdtYWlsLmNvbSIsImlhdCI6MTcyMjc3MDI4N30.S1KMMfUCKm_PTZYoyG5VbkvNkHcRSPnZfgceXd9_QXg
+
+{
+    "name": "Product 1 Ken",
     "description": "This is product 1",
     "price": 1000,
     "quantity": 10
