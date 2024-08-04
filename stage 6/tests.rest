@@ -1,0 +1,75 @@
+POST http://localhost:8000/auth/register
+Content-Type: application/json
+
+{
+    "fullName": "Samuella Manye Aglago",
+    "email": "samuellamanyeaglago@gmail.com",
+    "password": "123456",
+    "role": "admin"
+}
+
+###
+POST http://localhost:8000/auth/register
+Content-Type: application/json
+
+{
+    "fullName": "Kennedy Anyidoho",
+    "email": "kennyani9@gmail.com",
+    "password": "123456",
+    "role": "customer"
+}
+
+###
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+    "email": "samuellamanyeaglago@gmail.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+    "email": "kennyani9@gmail.com",
+    "password": "123456"
+}
+
+###
+GET http://localhost:8000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODg3NTg5MGY0YjgyMDJmODUxNjk0NCIsImVtYWlsIjoic2FtdWVsbGFtYW55ZWFnbGFnb0BnbWFpbC5jb20iLCJpYXQiOjE3MjAyMTkwNjl9.kLLdWzwxl042QLx0moUOE18oie6GXP9UDJugN8w9GVw
+
+###
+POST http://localhost:8000/auth/forgot_password
+Content-Type: application/json
+
+{
+    "email": "samuellamanyeaglago@gmail.com"
+}
+
+###
+POST http://localhost:8000/auth/reset_password
+Content-Type: application/json
+
+{
+    "token": "0ce198ec-13be-4a11-9356-ca4deb2310c0",
+    "newPassword": "sammyAglago97"
+}
+
+# samuella token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2MjNkYjA2NTg4YmRjOWY4YjJkYiIsImVtYWlsIjoic2FtdWVsbGFtYW55ZWFnbGFnb0BnbWFpbC5jb20iLCJpYXQiOjE3MjI3NzAxNzl9.Wy3TIuE24JIO4iLchoBEuOQxk-CrL8RPS0cD7_bTWjg
+# kennedy token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2Mjc1MzkwYzZiN2RkMWMwZGVjMCIsImVtYWlsIjoia2Vubnlhbmk5QGdtYWlsLmNvbSIsImlhdCI6MTcyMjc3MDI4N30.S1KMMfUCKm_PTZYoyG5VbkvNkHcRSPnZfgceXd9_QXg
+
+### Add products Ken
+
+POST http://localhost:8000/products/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2MjNkYjA2NTg4YmRjOWY4YjJkYiIsImVtYWlsIjoic2FtdWVsbGFtYW55ZWFnbGFnb0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjI3NzIxNTR9.s-xl770NiZVbpo1HvuRBJ9n0wpJwhcmse6r2w1zXeUU
+
+{
+    "name": "Product 1",
+    "description": "This is product 1",
+    "price": 1000,
+    "quantity": 10
+}
