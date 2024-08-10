@@ -1,0 +1,146 @@
+POST http://localhost:8000/auth/register
+Content-Type: application/json
+
+{
+    "fullName": "Samuella Manye Aglago",
+    "email": "samuellamanyeaglago@gmail.com",
+    "password": "123456",
+    "role": "admin"
+}
+
+###
+POST http://localhost:8000/auth/register
+Content-Type: application/json
+
+{
+    "fullName": "Kennedy Anyidoho",
+    "email": "kennyani9@gmail.com",
+    "password": "123456",
+    "role": "customer"
+}
+
+###
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+    "email": "samuellamanyeaglago@gmail.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+    "email": "kennyani9@gmail.com",
+    "password": "123456"
+}
+
+###
+GET http://localhost:8000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODg3NTg5MGY0YjgyMDJmODUxNjk0NCIsImVtYWlsIjoic2FtdWVsbGFtYW55ZWFnbGFnb0BnbWFpbC5jb20iLCJpYXQiOjE3MjAyMTkwNjl9.kLLdWzwxl042QLx0moUOE18oie6GXP9UDJugN8w9GVw
+
+###
+POST http://localhost:8000/auth/forgot_password
+Content-Type: application/json
+
+{
+    "email": "samuellamanyeaglago@gmail.com"
+}
+
+###
+POST http://localhost:8000/auth/reset_password
+Content-Type: application/json
+
+{
+    "token": "0ce198ec-13be-4a11-9356-ca4deb2310c0",
+    "newPassword": "sammyAglago97"
+}
+
+### Add products Samuella
+
+POST http://localhost:8000/products/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2MjNkYjA2NTg4YmRjOWY4YjJkYiIsImVtYWlsIjoic2FtdWVsbGFtYW55ZWFnbGFnb0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjI3NzIxNTR9.s-xl770NiZVbpo1HvuRBJ9n0wpJwhcmse6r2w1zXeUU
+
+{
+    "name": "Product 2",
+    "description": "This is product 2",
+    "price": 3000,
+    "quantity": 10
+}
+
+### Editing a product
+
+POST http://localhost:8000/products/66af72703ea15e6d0a26f8ec/edit
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2MjNkYjA2NTg4YmRjOWY4YjJkYiIsImVtYWlsIjoic2FtdWVsbGFtYW55ZWFnbGFnb0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjI3NzIxNTR9.s-xl770NiZVbpo1HvuRBJ9n0wpJwhcmse6r2w1zXeUU
+
+{
+    "name": "Product 1 edited 2",
+    "description": "This is product 1 edited 2",
+    "price": 5000
+}
+
+### Add products Ken
+
+POST http://localhost:8000/products/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2Mjc1MzkwYzZiN2RkMWMwZGVjMCIsImVtYWlsIjoia2Vubnlhbmk5QGdtYWlsLmNvbSIsImlhdCI6MTcyMjc3MDI4N30.S1KMMfUCKm_PTZYoyG5VbkvNkHcRSPnZfgceXd9_QXg
+
+{
+    "name": "Product 1 Ken",
+    "description": "This is product 1",
+    "price": 1000,
+    "quantity": 10
+}
+
+### Delete products Ken
+
+DELETE http://localhost:8000/products/66af72703ea15e6d0a26f8ec
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2Mjc1MzkwYzZiN2RkMWMwZGVjMCIsImVtYWlsIjoia2Vubnlhbmk5QGdtYWlsLmNvbSIsImlhdCI6MTcyMjc3MDI4N30.S1KMMfUCKm_PTZYoyG5VbkvNkHcRSPnZfgceXd9_QXg
+
+### Delete products Sam
+
+DELETE http://localhost:8000/products/66af72703ea15e6d0a26f8ec
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2MjNkYjA2NTg4YmRjOWY4YjJkYiIsImVtYWlsIjoic2FtdWVsbGFtYW55ZWFnbGFnb0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjI3NzYwNzJ9.tJMmE_Mj5Aunw7_3vtkCDjjojm0lqmzhAxFFPyw0sds
+
+### All operations for Ken
+
+# Ken token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2Mjc1MzkwYzZiN2RkMWMwZGVjMCIsImVtYWlsIjoia2Vubnlhbmk5QGdtYWlsLmNvbSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcyMjc3NzE4N30.UNLmUU6nerjXJ25tt6pSF1kUfthIr5HOwGJMJqyCB-A
+
+### Get products Ken
+GET http://localhost:8000/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2Mjc1MzkwYzZiN2RkMWMwZGVjMCIsImVtYWlsIjoia2Vubnlhbmk5QGdtYWlsLmNvbSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcyMjc3NzE4N30.UNLmUU6nerjXJ25tt6pSF1kUfthIr5HOwGJMJqyCB-A
+
+### Get a single product Ken
+GET http://localhost:8000/products/66af7eb28ab7f4b80e5ee54f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2Mjc1MzkwYzZiN2RkMWMwZGVjMCIsImVtYWlsIjoia2Vubnlhbmk5QGdtYWlsLmNvbSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcyMjc3NzE4N30.UNLmUU6nerjXJ25tt6pSF1kUfthIr5HOwGJMJqyCB-A
+
+### Create an order Ken
+
+POST http://localhost:8000/orders/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2Mjc1MzkwYzZiN2RkMWMwZGVjMCIsImVtYWlsIjoia2Vubnlhbmk5QGdtYWlsLmNvbSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcyMjc3NzE4N30.UNLmUU6nerjXJ25tt6pSF1kUfthIr5HOwGJMJqyCB-A
+
+{
+    "orderItems": [
+        {
+            "productId": "66af7eb28ab7f4b80e5ee54f",
+            "quantity": 2,
+            "totalPrice": 2000
+        },
+        {
+            "productId": "66af7f7c8ab7f4b80e5ee553",
+            "quantity": 1,
+            "totalPrice": 4000
+        }
+    ]
+}
+
+###
+
+POST http://localhost:8000/orders/66af81030c4f1425c344c846/checkout
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWY2Mjc1MzkwYzZiN2RkMWMwZGVjMCIsImVtYWlsIjoia2Vubnlhbmk5QGdtYWlsLmNvbSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcyMjc3NzE4N30.UNLmUU6nerjXJ25tt6pSF1kUfthIr5HOwGJMJqyCB-A
