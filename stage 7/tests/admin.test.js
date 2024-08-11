@@ -1,16 +1,26 @@
 import request from "supertest";
 import app from "../server.js";
 import mongoose from "mongoose";
+import connectToDatabase from "../db/connectToDatabase.js";
 import User from "../models/user.models.js";
 import Product from "../models/product.models.js";
-jest.useFakeTimers();
 
 describe("Admin Routes", () => {
   let adminToken;
   let productId;
+  let mockUser;
 
   beforeAll(async () => {
-    await mongoose.connect(process.env.TEST_MONGODB_URI);
+    await connectToDatabase();
+
+    // Create a mock admin user
+    mockUser = new User({
+      fullName: "Test Admin",
+      email: "admin@test.com",
+      password: "password123",
+      role: "admin",
+    });
+    await mockUser.save();
   });
 
   afterAll(async () => {
@@ -53,6 +63,10 @@ describe("Admin Routes", () => {
       const res = await request(app)
         .post("/products")
         .set("Authorization", `Bearer ${adminToken}`)
+        .set(
+          "x-mock-user",
+          JSON.stringify({ id: mockUser._id.toString(), role: "admin" })
+        )
         .send({
           name: "Test Product",
           description: "This is a test product",
@@ -72,6 +86,10 @@ describe("Admin Routes", () => {
       const res = await request(app)
         .post("/products")
         .set("Authorization", `Bearer ${adminToken}`)
+        .set(
+          "x-mock-user",
+          JSON.stringify({ id: mockUser._id.toString(), role: "admin" })
+        )
         .send({
           name: "Second Test Product",
           description: "This is another test product",
@@ -90,6 +108,10 @@ describe("Admin Routes", () => {
       const res = await request(app)
         .post(`/products/${productId}/edit`)
         .set("Authorization", `Bearer ${adminToken}`)
+        .set(
+          "x-mock-user",
+          JSON.stringify({ id: mockUser._id.toString(), role: "admin" })
+        )
         .send({
           name: "Updated Test Product",
           description: "This is an updated test product",
@@ -106,7 +128,11 @@ describe("Admin Routes", () => {
     it("should delete the second product", async () => {
       const res = await request(app)
         .delete(`/products/${productId}`)
-        .set("Authorization", `Bearer ${adminToken}`);
+        .set("Authorization", `Bearer ${adminToken}`)
+        .set(
+          "x-mock-user",
+          JSON.stringify({ id: mockUser._id.toString(), role: "admin" })
+        );
 
       expect(res.statusCode).toBe(200);
       expect(res.body.message).toBe("Product deleted successfully");

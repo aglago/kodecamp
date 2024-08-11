@@ -26,10 +26,10 @@ app.get("/", function (req, res) {
   res.send("Welcome to My Kodecamp 4.0 Stage 6 Assignment");
 });
 
+export default app;
+
 // Listen for requests
 app.listen(process.env.PORT, () => {
   console.log("Server running on port", process.env.PORT);
   connectToDatabase();
 });
-
-export default app;

@@ -4,7 +4,7 @@
   "description": "This API provides endpoints for user registration, login, forgot password, reset password, and accessing protected user profile details.",
   "main": "server.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --forceExit",
     "server": "nodemon server.js"
   },
   "type": "module",
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.25.3",
     "babel-jest": "^29.7.0",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0"
   }
 }

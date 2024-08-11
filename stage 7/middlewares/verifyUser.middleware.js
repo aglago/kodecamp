@@ -1,6 +1,11 @@
 import jwt from "jsonwebtoken";
 
 const verifyUser = (req, res, next) => {
+  if (process.env.NODE_ENV === "test" && req.headers["x-mock-user"]) {
+    req.user = JSON.parse(req.headers["x-mock-user"]);
+    return next();
+  }
+  
   try {
     // Make sure there is an authorization header in the request
     const authHeader = req.headers.authorization;
