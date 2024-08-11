@@ -29,7 +29,23 @@ app.get("/", function (req, res) {
 export default app;
 
 // Listen for requests
-app.listen(process.env.PORT, () => {
-  console.log("Server running on port", process.env.PORT);
-  connectToDatabase();
-});
+let server; // Hold the server instance
+
+const startServer = () => {
+  server = app.listen(process.env.PORT, () => {
+    console.log("Server running on port", process.env.PORT);
+    connectToDatabase();
+  });
+};
+
+const stopServer = () => {
+  return new Promise((resolve) => {
+    if (server) {
+      server.close(resolve); // Close the server
+    } else {
+      resolve();
+    }
+  });
+};
+
+export { startServer, stopServer };
