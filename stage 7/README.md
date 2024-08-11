@@ -17,6 +17,7 @@ Ensure you set the following environment variables in your `.env` file:
 
 - `PORT`: The port the server runs on.
 - `MONGODB_URI`: The connection string for your MongoDB database.
+- `TEST_MONGODB_URI`: The connection string for your test MongoDB database.
 - `SIGN_TOKEN`: The secret key used for signing JWT tokens.
 
 ## Routes
